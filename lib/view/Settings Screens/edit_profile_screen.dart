@@ -131,7 +131,7 @@ class EditProfileScreen extends StatelessWidget {
                       textType: TextInputType.name,
                       iconLead: Ionicons.person_outline,
                       iconSize: 28,
-                      hintText: 'Robert J. Stone',
+                      hintText: 'Kripesh Poudel',
                       textFormController: nameController,
                       textSize: 16,
                       labelSize: 16,
@@ -145,7 +145,7 @@ class EditProfileScreen extends StatelessWidget {
                       iconSize: 28,
                       textFormController: TextEditingController(
                           text: controller.userModel.email),
-                      hintText: 'example@gmail.com',
+                      hintText: 'kripesh@gmail.com',
                       readOnly: true,
                       textSize: 16,
                       labelSize: 16,

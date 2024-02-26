@@ -85,7 +85,7 @@ class SignInScreen extends GetWidget<AuthViewModel> {
                     textType: TextInputType.emailAddress,
                     iconLead: Ionicons.mail_outline,
                     iconSize: 28,
-                    hintText: 'example@gmail.com',
+                    hintText: 'kripesh@gmail.com',
                     textSize: 16,
                     labelSize: 16,
                     hintSize: 16,

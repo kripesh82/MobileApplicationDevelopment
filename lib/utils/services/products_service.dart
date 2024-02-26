@@ -1,68 +1,68 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProductService {
-  final CollectionReference _tShirts =
-      FirebaseFirestore.instance.collection('categories/1/tshirts');
+  final CollectionReference _burgers =
+  FirebaseFirestore.instance.collection('categories/1/burgers');
 
-  final CollectionReference _trousers =
-      FirebaseFirestore.instance.collection('categories/2/trousers');
+  final CollectionReference _pizza =
+  FirebaseFirestore.instance.collection('categories/2/pizza');
 
-  final CollectionReference _shoes =
-      FirebaseFirestore.instance.collection('categories/3/shoes');
+  final CollectionReference _momo =
+  FirebaseFirestore.instance.collection('categories/3/momo');
 
-  final CollectionReference _socks =
-      FirebaseFirestore.instance.collection('categories/4/socks');
+  final CollectionReference _chowmein =
+  FirebaseFirestore.instance.collection('categories/4/chowmein');
 
-  final CollectionReference _sunglasses =
-      FirebaseFirestore.instance.collection('categories/5/sunglasses');
+  final CollectionReference _samosa =
+  FirebaseFirestore.instance.collection('categories/5/samosa');
 
-  final CollectionReference _watches =
-      FirebaseFirestore.instance.collection('categories/6/watches');
+  final CollectionReference _beer =
+  FirebaseFirestore.instance.collection('categories/6/beer');
 
-  Future<List<QueryDocumentSnapshot>> getTshirtProducts() async {
-    var value = await _tShirts.get();
+  Future<List<QueryDocumentSnapshot>> getBurgerProducts() async {
+    var value = await _burgers.get();
     return value.docs;
   }
 
-  Future<List<QueryDocumentSnapshot>> getTrouserProducts() async {
-    var value = await _trousers.get();
+  Future<List<QueryDocumentSnapshot>> getPizzaProducts() async {
+    var value = await _pizza.get();
     return value.docs;
   }
 
-  Future<List<QueryDocumentSnapshot>> getShoesProducts() async {
-    var value = await _shoes.get();
+  Future<List<QueryDocumentSnapshot>> getMomoProducts() async {
+    var value = await _momo.get();
     return value.docs;
   }
 
-  Future<List<QueryDocumentSnapshot>> getSocksProducts() async {
-    var value = await _socks.get();
+  Future<List<QueryDocumentSnapshot>> getChowmeinProducts() async {
+    var value = await _chowmein.get();
     return value.docs;
   }
 
-  Future<List<QueryDocumentSnapshot>> getSunProducts() async {
-    var value = await _sunglasses.get();
+  Future<List<QueryDocumentSnapshot>> getSamosaProducts() async {
+    var value = await _samosa.get();
     return value.docs;
   }
 
-  Future<List<QueryDocumentSnapshot>> getWatchProducts() async {
-    var value = await _watches.get();
+  Future<List<QueryDocumentSnapshot>> getBeerProducts() async {
+    var value = await _beer.get();
     return value.docs;
   }
 
   Future<List> getAllProducts() async {
     var allProducts = [];
 
-    var value = await _tShirts.get();
+    var value = await _burgers.get();
     if (value.docs.isNotEmpty) {allProducts.addAll(value.docs);}
-    value = await _trousers.get();
+    value = await _pizza.get();
     if (value.docs.isNotEmpty) {allProducts.addAll(value.docs);}
-    value = await _shoes.get();
+    value = await _momo.get();
     if (value.docs.isNotEmpty) {allProducts.addAll(value.docs);}
-    value = await _socks.get();
+    value = await _chowmein.get();
     if (value.docs.isNotEmpty) {allProducts.addAll(value.docs);}
-    value = await _sunglasses.get();
+    value = await _samosa.get();
     if (value.docs.isNotEmpty) {allProducts.addAll(value.docs);}
-    value = await _watches.get();
+    value = await _beer.get();
     if (value.docs.isNotEmpty) {allProducts.addAll(value.docs);}
 
     return allProducts;

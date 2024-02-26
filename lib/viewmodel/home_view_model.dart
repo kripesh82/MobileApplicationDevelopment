@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_final_fields
-
 import 'dart:developer';
 
 import 'package:buyer/utils/services/home_service.dart';
@@ -74,7 +72,7 @@ class HomeViewModel extends GetxController {
     } else {
       _productModelFilter = _productModel
           .where((data) =>
-              data.name!.toLowerCase().contains(searched.toLowerCase()))
+          data.name!.toLowerCase().contains(searched.toLowerCase()))
           .toList();
     }
     update();
@@ -88,9 +86,9 @@ class HomeViewModel extends GetxController {
 
     if (searched.isNotEmpty) {
       Get.to(
-          () => SearchScreen(
-                title: searched,
-              ),
+              () => SearchScreen(
+            title: searched,
+          ),
           duration: const Duration(milliseconds: 700),
           transition: Transition.downToUp);
     } else {
@@ -168,7 +166,7 @@ class HomeViewModel extends GetxController {
     _loading.value = true;
     switch (id) {
       case '1':
-        await ProductService().getTshirtProducts().then((value) {
+        await ProductService().getBurgerProducts().then((value) {
           for (int i = 0; i < value.length; i++) {
             _productModel.add(ProductModel.fromJson(
                 value[i].data() as Map<dynamic, dynamic>));
@@ -177,7 +175,7 @@ class HomeViewModel extends GetxController {
         break;
 
       case '2':
-        await ProductService().getTrouserProducts().then((value) {
+        await ProductService().getPizzaProducts().then((value) {
           for (int i = 0; i < value.length; i++) {
             _productModel.add(ProductModel.fromJson(
                 value[i].data() as Map<dynamic, dynamic>));
@@ -186,7 +184,7 @@ class HomeViewModel extends GetxController {
         break;
 
       case '3':
-        await ProductService().getShoesProducts().then((value) {
+        await ProductService().getMomoProducts().then((value) {
           for (int i = 0; i < value.length; i++) {
             _productModel.add(ProductModel.fromJson(
                 value[i].data() as Map<dynamic, dynamic>));
@@ -195,7 +193,7 @@ class HomeViewModel extends GetxController {
         break;
 
       case '4':
-        await ProductService().getSocksProducts().then((value) {
+        await ProductService().getChowmeinProducts().then((value) {
           for (int i = 0; i < value.length; i++) {
             _productModel.add(ProductModel.fromJson(
                 value[i].data() as Map<dynamic, dynamic>));
@@ -204,7 +202,7 @@ class HomeViewModel extends GetxController {
         break;
 
       case '5':
-        await ProductService().getSunProducts().then((value) {
+        await ProductService().getSamosaProducts().then((value) {
           for (int i = 0; i < value.length; i++) {
             _productModel.add(ProductModel.fromJson(
                 value[i].data() as Map<dynamic, dynamic>));
@@ -213,7 +211,7 @@ class HomeViewModel extends GetxController {
         break;
 
       case '6':
-        await ProductService().getWatchProducts().then((value) {
+        await ProductService().getBeerProducts().then((value) {
           for (int i = 0; i < value.length; i++) {
             _productModel.add(ProductModel.fromJson(
                 value[i].data() as Map<dynamic, dynamic>));
