@@ -99,46 +99,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     ),
                   )),
               SizedBox(height: 3.h),
-              Container(
-                  height: 8.h,
-                  width: 100.w,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(
-                        color:
-                            _value == 2 ? AppColors.orange : AppColors.darkGrey,
-                        width: 1),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        top: 20, right: 20, left: 20, bottom: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const Icon(Icons.payment_outlined),
-                        SizedBox(width: 3.w),
-                        Text(
-                          'Pay With Card',
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Spacer(),
-                        Radio(
-                          value: 2,
-                          groupValue: _value,
-                          activeColor: AppColors.orange,
-                          onChanged: (value) {
-                            setState(() {
-                              _value = value;
-                            });
-                            controller.toggelAddCrad();
-                          },
-                        ),
-                      ],
-                    ),
-                  )),
               SizedBox(height: 3.h),
               filledButton(
                 height: 6.h,
